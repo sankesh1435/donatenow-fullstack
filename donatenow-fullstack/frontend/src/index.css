@@ -1,0 +1,76 @@
+/* ---------- Confetti / sparkle CSS animation ---------- */
+.confetti-wrap { display:flex; align-items:center; justify-content:center; }
+.confetti {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+}
+.confetti .dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.95;
+  animation: floatUp 1400ms linear infinite;
+}
+.confetti .dot:nth-child(1){ left:10%; top:70%; background:#fb7185; animation-delay:0ms; transform: translateZ(0) scale(.9);}
+.confetti .dot:nth-child(2){ left:30%; top:80%; background:#f97316; animation-delay:80ms; transform: translateZ(0) scale(1.0);}
+.confetti .dot:nth-child(3){ left:50%; top:75%; background:#60a5fa; animation-delay:160ms; transform: translateZ(0) scale(.95);}
+.confetti .dot:nth-child(4){ left:70%; top:82%; background:#34d399; animation-delay:240ms; transform: translateZ(0) scale(.85);}
+.confetti .dot:nth-child(5){ left:85%; top:70%; background:#a78bfa; animation-delay:320ms; transform: translateZ(0) scale(1.05);}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(0deg); opacity:1; }
+  30%  { transform: translateY(-18px) rotate(12deg); opacity:1; }
+  60%  { transform: translateY(-38px) rotate(-6deg); opacity:0.95; }
+  100% { transform: translateY(-70px) rotate(20deg); opacity:0; }
+}
+
+/* Small checkmark animation for "Goal Reached" */
+.checkmark {
+  width:44px; height:44px; display:inline-block; border-radius:50%; background:linear-gradient(90deg,#10b981,#06b6d4);
+  color:white; display:flex; align-items:center; justify-content:center; font-weight:700;
+  box-shadow:0 8px 20px rgba(6,95,70,0.12);
+  transform:scale(1); animation:pop .45s cubic-bezier(.2,.9,.3,1);
+}
+@keyframes pop { 0%{transform:scale(.6)} 60%{transform:scale(1.08)} 100%{transform:scale(1)} }
+/* Toast + modal visuals */
+.toast {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 9999;
+}
+
+.checkmark { width:44px; height:44px; display:inline-block; border-radius:50%; background:linear-gradient(90deg,#10b981,#06b6d4); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; box-shadow:0 8px 20px rgba(6,95,70,0.12); transform:scale(1); animation:pop .45s cubic-bezier(.2,.9,.3,1); }
+@keyframes pop { 0%{transform:scale(.6)} 60%{transform:scale(1.08)} 100%{transform:scale(1)} }
+
+/* nicer button focus */
+button:focus { outline: none; box-shadow: 0 0 0 3px rgba(99,102,241,0.12); }
+
+/* override default alert look on older browsers if any */
+.custom-alert { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto; }
+
+/* Glassmorphism and auth styles */
+.glass-card {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+}
+.auth-hero {
+  background: linear-gradient(135deg, rgba(99,102,241,0.95), rgba(14,165,164,0.9));
+  color: white;
+}
+.auth-cta { transform: translateY(0); transition: transform .45s cubic-bezier(.2,.9,.3,1); }
+.auth-cta:hover { transform: translateY(-6px); }
+.input-animated { transition: box-shadow .18s, transform .18s; }
+.input-animated:focus { box-shadow: 0 6px 22px rgba(15,23,42,0.06); transform: translateY(-2px); }
+.glass-btn { background: linear-gradient(90deg,#7c3aed,#06b6d4); color: white; border: none; }
+
+/* small centered glass wrapper */
+.auth-center { display:flex; align-items:center; justify-content:center; min-height:80vh; padding:40px 16px; }
+
+@media (max-width: 768px){ .auth-hero { border-radius:12px 12px 0 0; } }

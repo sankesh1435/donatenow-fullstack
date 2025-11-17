@@ -1,0 +1,1 @@
+DonateNow Backend (Node + Express + SQLite)\n\nQuick start:\n1. cd backend\n2. npm install\n3. node server.js\nAPI runs on http://localhost:4000\nAdmin seeded: admin@donatenow.local / 123\n
